@@ -11,13 +11,13 @@ import {BrowserRouter,Routes,Route} from 'react-router-dom';
 function App() {
   return (
     <>
-    <Navbar/>
     <BrowserRouter>
+    <Navbar/>
       <Routes>
         <Route path="/home" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/courses" element={<Courses />} />
-        <Route path="/service" element={<Services />} />
+        <Route path="/services" element={<Services />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
     </BrowserRouter>
