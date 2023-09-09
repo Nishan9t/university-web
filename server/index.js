@@ -3,6 +3,9 @@ const bodyParser = require('body-parser');
 const mongoose = require("mongoose");
 const cors= require('cors');
 
+
+const serviceController=require('./controllers/serviceController')
+
 const app=express();
 
 app.use(cors());
@@ -21,6 +24,10 @@ const connectDB =async()=>{
 }
 
 //routes
+
+app.post("/api/services",serviceController.addServices)
+app.get("/api/services",serviceController.getServices)
+
 
 app.get("/hello",(req,res)=>{
     return res.send("hello")
