@@ -28,6 +28,8 @@ const connectDB =async()=>{
 app.post("/api/services",serviceController.addServices)
 app.get("/api/services",serviceController.getServices)
 
+app.get('/api/slider',serviceController.getSlider)
+
 
 app.get("/hello",(req,res)=>{
     return res.send("hello")
