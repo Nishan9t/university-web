@@ -1,8 +1,10 @@
 import React from 'react'
+import Footer from './Footer'
 
 export default function Contact() {
   return (
-<div className="lg:px-16 lg:py-16 lg:m-16 shadow-lg sm:p-4 md:p-4 sm:m-4 md:m-4 ">
+    <div>
+    <div className="lg:px-16 lg:py-16 lg:m-16 shadow-lg sm:p-4 md:p-4 sm:m-4 md:m-4 ">
       <h1 className="font-bold text-lg">CONTACT ABC UNIVERSITY</h1>
       <p>
         Contrary to popular belief, Lorem Ipsum is not simply random text. It
@@ -22,6 +24,13 @@ export default function Contact() {
         exact original form, accompanied by English versions from the 1914
         translation by H. Rackham.
       </p>
+     
+    </div>
+    
+    <div>
+        <Footer/>
+    </div>
+
     </div>
   )
 }

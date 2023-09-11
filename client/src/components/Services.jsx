@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios';
+import Footer from './Footer'
 
 export default function Services() {
 
@@ -17,6 +18,9 @@ useEffect(()=>{
 })
 
   return (
+    <div>
+
+    
     <div className='lg:flex-wrap md:flex '>
     {
       data.length > 0? 
@@ -30,6 +34,12 @@ useEffect(()=>{
       })
       :'no data found'
     }
+
+    </div>
+
+      <div>
+        <Footer/>
+      </div>
 
     </div>
   )
