@@ -3,8 +3,8 @@ import Footer from './Footer'
 
 export default function About() {
   return (
-    <div>
-    <div className="lg:px-16 lg:py-16 lg:m-16 shadow-lg sm:p-4 md:p-4 sm:m-4 md:m-4 sm:w-full ">
+   
+    <div className="lg:px-16 lg:py-16 lg:m-16 shadow-lg sm:p-4 md:p-4 sm:m-4 md:m-4 mb-36 ">
       <h1 className="font-bold text-lg">ABOUT ABC UNIVERSITY</h1>
       <p>
         Contrary to popular belief, Lorem Ipsum is not simply random text. It
@@ -26,9 +26,7 @@ export default function About() {
       </p>
      
     </div>
-    <div>
-        <Footer/>
-    </div>
-    </div>
+    
+    
   );
 }

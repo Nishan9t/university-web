@@ -3,6 +3,7 @@ import './App.css';
 import About from './components/About';
 import Contact from './components/Contact';
 import Courses from './components/Courses';
+import Footer from './components/Footer';
 import Home from './components/Home';
 import Navbar from './components/Navbar';
 import Services from './components/Services';
@@ -19,7 +20,9 @@ function App() {
         <Route path="/courses" element={<Courses />} />
         <Route path="/services" element={<Services />} />
         <Route path="/contact" element={<Contact />} />
+        
       </Routes>
+      <Footer/>
     </BrowserRouter>
     </>
   );
