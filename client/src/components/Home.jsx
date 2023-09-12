@@ -6,7 +6,11 @@ export default function Home() {
   return (
    
       <div className='mb-36'>
-        <Carousel/>
+
+          <div className=''>
+             <Carousel/>
+          </div>
+        
       </div>
      
    

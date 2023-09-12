@@ -29,7 +29,15 @@ export default function Carousel() {
       }
       }
 
-    
+      setTimeout(()=>{
+        if(index===2)
+        {
+          setIndex(0);
+        }
+        else{
+          setIndex(index+1);
+        }
+      }, 3000);
 
     useEffect(()=>{
         axios.get('http://localhost:8000/api/slider')
@@ -41,12 +49,18 @@ export default function Carousel() {
             console.log(err)
         })
 
+        
+
     },[index])
+
+
   return (
-    <div className='flex '>
-            <button onClick={()=>indexSet("-")}><FaLessThan/></button>
-            <img className='' src={images[index]}alt="carousel"/>{index}
-            <button onClick={()=>indexSet("+")}><FaGreaterThan/></button>
+    <div className='flex align-center justify-center relative mt-4 '>
+            <button className=' p-2 absolute top-1/2 left-96 border border-white hover:border-blue-500 bg-slate-100 rounded-2xl white-200' onClick={()=>indexSet("-")}><FaLessThan/></button>
+         
+            <img className='rounded-lg ' src={images[index]}alt="carousel"/>
+          
+            <button className='p-2 absolute top-1/2 right-96 border border-white hover:border-blue-500 bg-slate-100 rounded-2xl white-200' onClick={()=>indexSet("+")}><FaGreaterThan/></button>
             
     </div>
   )
