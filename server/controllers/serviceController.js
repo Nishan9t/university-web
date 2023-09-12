@@ -40,9 +40,9 @@ module.exports.addServices=async(req,res)=>{
  //slider images
 
  module.exports.getSlider=async(req,res)=>{
-    const url1='https://picsum.photos/id/1/1000/550'
-    const url2='https://picsum.photos/id/2/1000/550'
-    const url3='https://picsum.photos/id/3/1000/550'
+    const url1='https://picsum.photos/id/1/1550/550'
+    const url2='https://picsum.photos/id/2/1550/550'
+    const url3='https://picsum.photos/id/3/1550/550'
     const arr =[url1,url2,url3]
     return res.send({code:200 , message:"success",data: arr})
 }

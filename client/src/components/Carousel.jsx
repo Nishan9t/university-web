@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import {FaLessThan,FaGreaterThan} from 'react-icons/fa'
+import {MdCircle} from 'react-icons/md'
 
 export default function Carousel() {
 
@@ -55,13 +56,18 @@ export default function Carousel() {
 
 
   return (
-    <div className='flex align-center justify-center relative mt-4 '>
-            <button className=' p-2 absolute top-1/2 left-96 border border-white hover:border-blue-500 bg-slate-100 rounded-2xl white-200' onClick={()=>indexSet("-")}><FaLessThan/></button>
+    <div>
+
+  
+    <div className='flex align-center justify-center relative'>
+            <button className=' p-2 absolute top-1/2 left-44 border border-white hover:border-blue-500 bg-slate-100 rounded-2xl white-200' onClick={()=>indexSet("-")}><FaLessThan/></button>
          
-            <img className='rounded-lg ' src={images[index]}alt="carousel"/>
+            <img className='' src={images[index]}alt="carousel"/>
           
-            <button className='p-2 absolute top-1/2 right-96 border border-white hover:border-blue-500 bg-slate-100 rounded-2xl white-200' onClick={()=>indexSet("+")}><FaGreaterThan/></button>
+            <button className='p-2 absolute top-1/2 right-44 border border-white hover:border-blue-500 bg-slate-100 rounded-2xl white-200' onClick={()=>indexSet("+")}><FaGreaterThan/></button>
             
+    </div>
+           
     </div>
   )
 }

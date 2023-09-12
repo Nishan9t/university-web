@@ -1,5 +1,7 @@
 
+
 import './App.css';
+import ServicesAdmin from './admin/ServicesAdmin';
 import About from './components/About';
 import Contact from './components/Contact';
 import Courses from './components/Courses';
@@ -20,6 +22,8 @@ function App() {
         <Route path="/courses" element={<Courses />} />
         <Route path="/services" element={<Services />} />
         <Route path="/contact" element={<Contact />} />
+
+        <Route path="/admin/services" element={<ServicesAdmin />} />
         
       </Routes>
       <Footer/>
