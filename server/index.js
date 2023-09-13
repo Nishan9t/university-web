@@ -5,6 +5,7 @@ const cors= require('cors');
 
 
 const serviceController=require('./controllers/serviceController')
+const adminController = require('./controllers/adminController')
 
 const app=express();
 
@@ -30,6 +31,8 @@ app.get("/api/services",serviceController.getServices)
 
 app.get('/api/slider',serviceController.getSlider)
 
+
+app.get('/admin/admins',adminController.getAdmin)
 
 app.get("/hello",(req,res)=>{
     return res.send("hello")
