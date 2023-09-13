@@ -1,6 +1,7 @@
 
 
 import './App.css';
+import ListAdmins from './admin/ListAdmins';
 import ServicesAdmin from './admin/ServicesAdmin';
 import About from './components/About';
 import Contact from './components/Contact';
@@ -24,6 +25,8 @@ function App() {
         <Route path="/contact" element={<Contact />} />
 
         <Route path="/admin/services" element={<ServicesAdmin />} />
+        <Route path="/admin/list" element={<ListAdmins />} />
+        
         
       </Routes>
       <Footer/>
