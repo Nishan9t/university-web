@@ -6,37 +6,37 @@ import {MdCircle} from 'react-icons/md'
 export default function Carousel() {
 
     const [images,setImages] = useState([])
-    const [index,setIndex]=useState(0);
+    const [ind,setInd]=useState(0);
 
     function indexSet(work){
-      if(index===2 && work==="+")
+      if(ind===2 && work==="+")
       {
-        setIndex(0);
+        setInd(0);
       }
-      else if(index===0 && work==="-")
+      else if(ind===0 && work==="-")
       {
-        setIndex(2);
+        setInd(2);
       }
       else{
         if(work==="+")
         {
-          setIndex((prev)=> prev+1);
+          setInd((prev)=> prev+1);
         }
         else 
         {
-          setIndex((prev)=> prev-1);
+          setInd((prev)=> prev-1);
         }
         
       }
       }
 
       setTimeout(()=>{
-        if(index===2)
+        if(ind===2)
         {
-          setIndex(0);
+          setInd(0);
         }
         else{
-          setIndex(index+1);
+          setInd(ind+1);
         }
       }, 3000);
 
@@ -52,22 +52,40 @@ export default function Carousel() {
 
         
 
-    },[index])
+    },[ind])
 
 
   return (
-    <div>
 
-  
-    <div className='flex align-center justify-center relative'>
-            <button className=' p-2 absolute top-1/2 left-44 border border-white hover:border-blue-500 bg-slate-100 rounded-2xl white-200' onClick={()=>indexSet("-")}><FaLessThan/></button>
-         
-            <img className='' src={images[index]}alt="carousel"/>
-          
-            <button className='p-2 absolute top-1/2 right-44 border border-white hover:border-blue-500 bg-slate-100 rounded-2xl white-200' onClick={()=>indexSet("+")}><FaGreaterThan/></button>
-            
-    </div>
-           
+    <div>
+          <div className='relative'>
+
+        
+                  <div className='flex align-center justify-center relative '>
+                          <button className=' p-2 absolute top-1/2 left-44 border border-white hover:border-blue-500 bg-slate-100 rounded-2xl white-200' onClick={()=>indexSet("-")}><FaLessThan/></button>
+                      
+                          <img className='' src={images[ind]}alt="carousel"/>
+                        
+                          <button className='p-2 absolute top-1/2 right-44 border border-white hover:border-blue-500 bg-slate-100 rounded-2xl white-200' onClick={()=>indexSet("+")}><FaGreaterThan/></button>
+                          
+                  </div>
+
+                  <div className='flex justify-center absolute bottom-4 left-1/2'>
+
+                      {
+                        images.map((image,index)=>{
+                        
+                          return(
+                            <div className='m-2'>
+                              <MdCircle className={index===ind ? 'text-red-500':''}/>
+                            </div>
+                          )}
+                        )
+                      }
+                  </div>
+                
+          </div>
+
     </div>
   )
 }
