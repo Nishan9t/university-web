@@ -34,6 +34,7 @@ app.get('/api/slider',serviceController.getSlider)
 
 app.get('/admin/admins',adminController.getAdmins)
 app.post('/admin/add',adminController.addAdmin)
+app.post('/admin/login',adminController.loginAdmin)
 
 app.get("/hello",(req,res)=>{
     return res.send("hello")

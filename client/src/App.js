@@ -2,7 +2,9 @@
 
 import './App.css';
 import AddAdmin from './admin/AddAdmin';
+import AdminDash from './admin/AdminDash';
 import ListAdmins from './admin/ListAdmins';
+import LoginAdmin from './admin/LoginAdmin';
 import ServicesAdmin from './admin/ServicesAdmin';
 import About from './components/About';
 import Contact from './components/Contact';
@@ -28,6 +30,8 @@ function App() {
         <Route path="/admin/services" element={<ServicesAdmin />} />
         <Route path="/admin/list" element={<ListAdmins />} />
         <Route path="/admin/add" element={<AddAdmin />} />
+        <Route path="/admin/login" element={<LoginAdmin />} />
+        <Route path="/admin/dashboard" element={<AdminDash />} />
         
         
       </Routes>
