@@ -11,12 +11,11 @@ const adminSchema=mongoose.Schema({
     },
     type:{
         type:String,
-        
-        default:"subadmin",
+       
     },
     status:{
         type:String,
-        default:"ACTIVE"
+       
     },
     date:{
         type:String,
@@ -32,5 +31,5 @@ module.exports=adminModel
 //     password:'pass123',
 //     type:'admin',
 //     status:"ACTIVE",
-//     data:new Date(),
+//     date:new Date(),
 // })

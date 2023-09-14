@@ -1,6 +1,7 @@
 
 
 import './App.css';
+import AddAdmin from './admin/AddAdmin';
 import ListAdmins from './admin/ListAdmins';
 import ServicesAdmin from './admin/ServicesAdmin';
 import About from './components/About';
@@ -26,6 +27,7 @@ function App() {
 
         <Route path="/admin/services" element={<ServicesAdmin />} />
         <Route path="/admin/list" element={<ListAdmins />} />
+        <Route path="/admin/add" element={<AddAdmin />} />
         
         
       </Routes>
