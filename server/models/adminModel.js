@@ -19,7 +19,7 @@ const adminSchema=mongoose.Schema({
     },
     date:{
         type:String,
-        default:new Date()
+       
     },
 });
 
