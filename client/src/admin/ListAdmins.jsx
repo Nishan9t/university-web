@@ -5,6 +5,8 @@ import { Link } from 'react-router-dom';
 
 export default function ListAdmins() {
 
+    const navigate=useState()
+
     const [admins,setAdmins]=useState([]);
 
     useEffect(()=>{
@@ -16,6 +18,13 @@ export default function ListAdmins() {
             console.log(err);
         })
 
+    },[])
+
+    useEffect(()=>{
+        if(localStorage.getItem('type')!=="ADMIN")
+        {
+            navigate('/admin/dashboard')
+        }
     },[])
 
   return (

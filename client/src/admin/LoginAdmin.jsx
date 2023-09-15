@@ -18,12 +18,12 @@ export default function LoginAdmin() {
            
         }).then((res)=>{
             console.log(res.data);
-            localStorage.setItem('type',res.data.type)
-            localStorage.setItem('token',res.data.token)
+            
             setUserName('')
             setPassword('');
 
-
+            localStorage.setItem('type',res.data.type)
+            localStorage.setItem('token',res.data.token)
           
             navigate("/admin/dashboard")
         }).catch(err=>{

@@ -1,13 +1,20 @@
 import axios from 'axios'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 
 export default function ServicesAdmin() {
 
- 
+  const navigate=useNavigate()
 
    const [title,setTitle]=useState("")
    const [desc,setDesc]=useState("")
+
+   useEffect(()=>{
+      if(!localStorage.getItem('token')){
+        navigate('/home')
+      }
+   },[])
 
    const handleSubmit=async()=>{
       const res = await axios.post('http://localhost:8000/api/services',{
