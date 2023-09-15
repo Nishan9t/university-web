@@ -1,6 +1,24 @@
 const servicesModel = require("../models/servicesModel")
+const jwt = require('jsonwebtoken')
 
 module.exports.addServices=async(req,res)=>{
+
+    
+
+    if(!req.headers.authorization)
+    {
+        return res.send({code : 403 , message:"No Token"})
+    }
+    
+
+    const userDetail = await jwt.verify(req.headers.authorization,'PRIVATEKEY')
+
+    if(userDetail._doc.type !=='SUBADMIN' && userDetail._doc.type !=='ADMIN')
+    {
+        return res.send({code : 403 , message:"Unauthorized"})
+    }
+   
+
     const title = req.body.title;
     const description = req.body.description;
 

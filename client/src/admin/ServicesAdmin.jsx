@@ -19,7 +19,10 @@ export default function ServicesAdmin() {
    const handleSubmit=async()=>{
       const res = await axios.post('http://localhost:8000/api/services',{
         title:title,
-        description:desc
+        description:desc,
+      },
+      {
+        headers:{'authorization':localStorage.getItem('token')}
       })
 
       if(res.data)
