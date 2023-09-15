@@ -17,22 +17,26 @@ export default function ServicesAdmin() {
    },[])
 
    const handleSubmit=async()=>{
-      const res = await axios.post('http://localhost:8000/api/services',{
+      await axios.post('http://localhost:8000/api/services',{
         title:title,
         description:desc,
       },
       {
         headers:{'authorization':localStorage.getItem('token')}
-      })
-
-      if(res.data)
-      {
-       
+      }).then((res)=>{
+        if(res.data.code ===403 && res.data.message==="token expire")
+        {
+          localStorage.setItem('token',null)
+        }
         setTitle("");
         setDesc("");
         alert(res.data.message);
-      }
 
+      }).catch(err=>{
+        console.log(err)
+      })
+
+     
    }
 
 
