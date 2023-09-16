@@ -9,7 +9,11 @@ const serviceSchema= mongoose.Schema({
     description:{
         type:String,
         required:true
+    },
+    imageUrl:{
+        type:String,
+        required:true
     }
 })
 
-module.exports=mongoose.model('services',serviceSchema);
+module.exports=mongoose.model('services22',serviceSchema);

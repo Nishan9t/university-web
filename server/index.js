@@ -2,6 +2,10 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require("mongoose");
 const cors= require('cors');
+const multer = require('multer')
+
+const upload = multer({dest:'uploads/'})
+
 
 
 const serviceController=require('./controllers/serviceController')
@@ -9,6 +13,8 @@ const adminController = require('./controllers/adminController')
 
 const app=express();
 
+
+app.use('/uploads',express.static('uploads'))
 app.use(cors());
 app.use(bodyParser.urlencoded({ extended:false}))
 app.use(bodyParser.json())
@@ -26,7 +32,7 @@ const connectDB =async()=>{
 
 //routes
 
-app.post("/api/services",serviceController.addServices)
+app.post("/api/services",upload.single('image'),serviceController.addServices)
 app.get("/api/services",serviceController.getServices)
 
 app.get('/api/slider',serviceController.getSlider)
