@@ -35,7 +35,6 @@ useEffect(()=>{
       .map((serviceItem)=>{
         return(
           <div key={serviceItem._id} className=' border-2 border-solid p-2  mx-8 my-4 h-80 lg:w-1/4 sm:w-full md:w-full shadow-lg rounded-md overflow-hidden'>
-            <img className='h-1/2 w-full' src={`http://localhost:8000/${serviceItem?.imageUrl}`}/>
             <div className='font-bold text-lg capitalize mb-2 underline'>{serviceItem.title}</div>
             <div className=''>{serviceItem.description}</div>
           </div>
