@@ -1,6 +1,7 @@
 const servicesModel = require("../models/servicesModel")
 const jwt = require('jsonwebtoken')
 
+
 module.exports.addServices=async(req,res)=>{
 
     
@@ -24,13 +25,14 @@ module.exports.addServices=async(req,res)=>{
 
     const title = req.body.title;
     const description = req.body.description;
+    const imageUrl = req.file.path
 
-    if(!title || !description)
+    if(!title || !description || !imageUrl)
     {
         return res.send({code:400 , message:"Bad request"})
     }
 
-    const newService = new servicesModel({title:title , description:description})
+    const newService = new servicesModel({title:title , description:description , imageUrl:imageUrl})
 
     const success = await newService.save();
 
