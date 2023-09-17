@@ -1,15 +1,48 @@
+import axios from "axios"
 
 
-const serviceReducer = (state={ count : 10} , action)=>{
+export const getServices=()=>{
+    return async(dispatch)=>{
 
-    if(action.type ==='ADD')
+        dispatch({type:"GET_SERVICES"})
+        const response = await axios.get('http://localhost:8000/api/services')
+
+        if(response)
+        {
+            dispatch({type:'GET_SERVICES_COMPLETED' , payload: response.data})
+        }
+
+        if(!response)
+        {
+            dispatch({type:'GET_SERVICES_FAILED' })
+        }
+
+    }
+}
+
+
+const serviceReducer = (state={ isLoading : false , servicesData:[]} , action)=>{
+
+    if(action.type ==='GET_SERVICES')
     {
-        return {count: state.count + action.payload}
+        return {
+            isLoading:true,
+        }
     }
 
-    if(action.type ==='SUB')
+    if(action.type ==='GET_SERVICES_COMPLETED')
     {
-        return {count: state.count - action.payload}
+        return {
+            isLoading:false,
+            servicesData:action.payload
+        }
+    }
+    if(action.type ==='GET_SERVICES_FAILED')
+    {
+        return {
+            isLoading:false,
+            servicesData:[]
+        }
     }
     return state
 }

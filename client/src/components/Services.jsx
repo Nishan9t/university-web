@@ -2,9 +2,12 @@ import React, { useEffect, useState } from 'react'
 import axios from 'axios';
 import Footer from './Footer'
 
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import {getServices} from "../reducers/serviceReducer";
 
 export default function Services() {
+
+  const dispatch=useDispatch()
 
   const state =useSelector(state =>state)
   console.log(state)
@@ -13,14 +16,16 @@ export default function Services() {
   const [filter,setFilter]= useState('')
 
 useEffect(()=>{
-  axios.get('http://localhost:8000/api/services')
-  .then(res=>{
-    console.log(res.data)
-    setData(res.data.data)
-  })
-  .catch(err=>{
-    console.log(err);
-  })
+  // axios.get('http://localhost:8000/api/services')
+  // .then(res=>{
+  //   console.log(res.data)
+  //   setData(res.data.data)
+  // })
+  // .catch(err=>{
+  //   console.log(err);
+  // })
+
+  dispatch(getServices()) ;
 },[])
 
   return (
