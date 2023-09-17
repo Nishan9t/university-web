@@ -2,7 +2,12 @@ import React, { useEffect, useState } from 'react'
 import axios from 'axios';
 import Footer from './Footer'
 
+import { useSelector } from 'react-redux';
+
 export default function Services() {
+
+  const state =useSelector(state =>state)
+  console.log(state)
 
   const [data,setData]=useState([]);
   const [filter,setFilter]= useState('')
@@ -16,7 +21,7 @@ useEffect(()=>{
   .catch(err=>{
     console.log(err);
   })
-})
+},[])
 
   return (
   <div className='mb-36'>
