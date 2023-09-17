@@ -9,10 +9,10 @@ export default function Services() {
 
   const dispatch=useDispatch()
 
-  const state =useSelector(state =>state)
+  const state =useSelector(state =>state.serviceReducer)
   console.log(state)
 
-  const [data,setData]=useState([]);
+  // const [data,setData]=useState([]);
   const [filter,setFilter]= useState('')
 
 useEffect(()=>{
@@ -36,8 +36,10 @@ useEffect(()=>{
         </div>
     <div className='lg:flex-wrap md:flex  justify-center'>
     {
-      data.length > 0? 
-      data
+      state &&
+      state.servicesData &&
+      state.servicesData.length > 0? 
+      state.servicesData
       .sort((a,b)=>a.title.toLowerCase() > b.title.toLowerCase()? 1: -1)
       .filter((item)=>{
         return item.title.toLowerCase().includes(filter.toLocaleLowerCase())

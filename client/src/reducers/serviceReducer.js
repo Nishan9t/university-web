@@ -9,7 +9,7 @@ export const getServices=()=>{
 
         if(response)
         {
-            dispatch({type:'GET_SERVICES_COMPLETED' , payload: response.data})
+            dispatch({type:'GET_SERVICES_COMPLETED' , payload: response.data.data})
         }
 
         if(!response)
