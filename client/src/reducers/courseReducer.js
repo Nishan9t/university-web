@@ -7,7 +7,7 @@ export const getCourses=()=>{
     return async(dispatch)=>{
 
         dispatch({type:"GET_COURSES"})
-        const response = await axios.get('http://localhost:8000/api/services')
+        const response = await axios.get('http://localhost:8000/api/courses')
 
         if(response)
         {

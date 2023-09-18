@@ -17,10 +17,14 @@ export default function Courses() {
 
   return (
 
-      
-    <div className='lg:flex-wrap md:flex lg:mx-auto mb-36 justify-center mt-4'>
+<div className=' mb-36  mt-4'>
+      {
+        courseState.isLoading && <h1 className='text-center'>LOADING...</h1>
+      }
+    <div className='lg:flex-wrap md:flex lg:mx-auto justify-center'>
 
     {
+      courseState &&
       courseState.coursesData &&
              courseState.coursesData.length > 0 ?
                   courseState.coursesData.map((item)=>{
@@ -60,6 +64,6 @@ export default function Courses() {
     </div>
 
      
-   
+    </div>
   )
 }

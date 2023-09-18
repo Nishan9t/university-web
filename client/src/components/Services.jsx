@@ -34,6 +34,10 @@ useEffect(()=>{
         
         <input type="text" className='border border-2 p-1 m-2 border-black w-80 rounded-sm' placeholder='Title' value={filter} onChange={(e)=>setFilter(e.target.value)}></input>
         </div>
+
+      {
+        state.isLoading && <h1 className='text-center'>LOADING...</h1>
+      }
     <div className='lg:flex-wrap md:flex  justify-center'>
     {
       state &&

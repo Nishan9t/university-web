@@ -10,6 +10,7 @@ const upload = multer({dest:'uploads/'})
 
 const serviceController=require('./controllers/serviceController')
 const adminController = require('./controllers/adminController')
+const courseController = require('./controllers/courseController')
 
 const app=express();
 
@@ -34,6 +35,9 @@ const connectDB =async()=>{
 
 app.post("/api/services",upload.single('image'),serviceController.addServices)
 app.get("/api/services",serviceController.getServices)
+
+app.post("/api/courses",courseController.addCourses)
+app.get("/api/courses",courseController.getCourses)
 
 app.get('/api/slider',serviceController.getSlider)
 
