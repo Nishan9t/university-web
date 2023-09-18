@@ -17,6 +17,7 @@ import {BrowserRouter,Routes,Route} from 'react-router-dom';
 
 import { Provider } from 'react-redux';
 import store from './store';
+import CoursesAdmin from './admin/CoursesAdmin';
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
         <Route path="/contact" element={<Contact />} />
 
         <Route path="/admin/services" element={<ServicesAdmin />} />
+        <Route path="/admin/courses" element={<CoursesAdmin />} />
         <Route path="/admin/list" element={<ListAdmins />} />
         <Route path="/admin/add" element={<AddAdmin />} />
         <Route path="/admin/login" element={<LoginAdmin />} />

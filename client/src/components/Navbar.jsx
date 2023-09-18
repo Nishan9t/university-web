@@ -28,6 +28,10 @@ export default function Navbar() {
               <div className='px-2 lg:py-4 hover:pb-0 font-bold cursor-pointer hover:text-red-500 hover:border-b-4 hover:border-red-500'> <Link to="/admin/services">Add Services</Link>    </div>
             }
             {
+              localStorage.getItem('token') &&
+              <div className='px-2 lg:py-4 hover:pb-0 font-bold cursor-pointer hover:text-red-500 hover:border-b-4 hover:border-red-500'> <Link to="/admin/courses">Add Courses</Link>    </div>
+            }
+            {
               localStorage.getItem('token') && localStorage.getItem('type')==='ADMIN'?
               <div className='px-2 lg:py-4 hover:pb-0 font-bold cursor-pointer hover:text-red-500 hover:border-b-4 hover:border-red-500'> <Link to="/admin/list">Admin List</Link>    </div>
               :
