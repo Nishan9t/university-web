@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 
-export default function CoursesAdmin() {
+export default function ContactsAdmin() {
 
   const navigate=useNavigate()
 
@@ -49,12 +49,12 @@ export default function CoursesAdmin() {
 
   return (
     <div className='flex flex-col w-1/2 justify-center align-center mx-auto shadow-xl mt-4 mb-36 p-4'>
-      <input type='text' className='m-4  border border-2 hover:border-green-200 p-2 rounded-lg' placeholder='Course Title' value={title} onChange={(e)=>setTitle(e.target.value)}></input>
+      <input type='text' className='m-4  border border-2 hover:border-green-200 p-2 rounded-lg' placeholder='Contact Title' value={title} onChange={(e)=>setTitle(e.target.value)}></input>
       
-      <textarea className='m-4 h-36  border border-2 hover:border-green-200 p-2 rounded-lg' placeholder='Course Description' value={desc} onChange={(e)=>setDesc(e.target.value)}></textarea>
+      <textarea className='m-4 h-36  border border-2 hover:border-green-200 p-2 rounded-lg' placeholder='Contact Description' value={desc} onChange={(e)=>setDesc(e.target.value)}></textarea>
      
       
-      <button className='border w-32 border-2 border-green-200 rounded-lg p-2 hover:bg-green-200 self-center' onClick={(e)=>handleSubmit()}>ADD COURSE</button>
+      <button className='border w-32 border-2 border-green-200 rounded-lg p-2 hover:bg-green-200 self-center' onClick={(e)=>handleSubmit()}>ADD CONTACT</button>
     </div>
   )
 }

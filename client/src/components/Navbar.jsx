@@ -18,6 +18,10 @@ useEffect(()=>{
   {
     navigate('/admin/services')
   }
+  else if(drop==='contact')
+  {
+    navigate('/admin/contacts')
+  }
 },[drop])
 
   useEffect(()=>{
@@ -49,6 +53,7 @@ useEffect(()=>{
                 <option>Add Contents</option>
                 <option className='border-none active:border-0 hover:border-0 focus:border-none' value={'service'} >Add Services</option>
                 <option className='border-none active:border-0 hover:border-0 focus:border-none' value={'course'}>Add Courses</option>
+                <option className='border-none active:border-0 hover:border-0 focus:border-none' value={'contact'}>Add Contacts</option>
               </select>
               
               </div>

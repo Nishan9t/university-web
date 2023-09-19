@@ -19,6 +19,8 @@ import { Provider } from 'react-redux';
 import store from './store';
 import CoursesAdmin from './admin/CoursesAdmin';
 
+import ContactsAdmin from './admin/ContactsAdmin';
+
 function App() {
   return (
     <>
@@ -35,6 +37,7 @@ function App() {
 
         <Route path="/admin/services" element={<ServicesAdmin />} />
         <Route path="/admin/courses" element={<CoursesAdmin />} />
+        <Route path="/admin/contacts" element={<ContactsAdmin />} />
         <Route path="/admin/list" element={<ListAdmins />} />
         <Route path="/admin/add" element={<AddAdmin />} />
         <Route path="/admin/login" element={<LoginAdmin />} />
