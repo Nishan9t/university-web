@@ -22,6 +22,11 @@ useEffect(()=>{
   {
     navigate('/admin/contacts')
   }
+  else if(drop==='about')
+  {
+    navigate('/admin/abouts')
+  }
+
 },[drop])
 
   useEffect(()=>{
@@ -54,6 +59,7 @@ useEffect(()=>{
                 <option className='border-none active:border-0 hover:border-0 focus:border-none' value={'service'} >Add Services</option>
                 <option className='border-none active:border-0 hover:border-0 focus:border-none' value={'course'}>Add Courses</option>
                 <option className='border-none active:border-0 hover:border-0 focus:border-none' value={'contact'}>Add Contacts</option>
+                <option className='border-none active:border-0 hover:border-0 focus:border-none' value={'about'}>Add Abouts</option>
               </select>
               
               </div>
