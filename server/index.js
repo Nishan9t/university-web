@@ -11,6 +11,8 @@ const upload = multer({dest:'uploads/'})
 const serviceController=require('./controllers/serviceController')
 const adminController = require('./controllers/adminController')
 const courseController = require('./controllers/courseController')
+const contactController = require('./controllers/contactController')
+const aboutController = require('./controllers/aboutController')
 
 const app=express();
 
@@ -39,12 +41,19 @@ app.get("/api/services",serviceController.getServices)
 app.post("/api/courses",courseController.addCourses)
 app.get("/api/courses",courseController.getCourses)
 
+app.post("/api/contacts",contactController.addContact)
+app.get("/api/contacts",contactController.getContact)
+
+app.post("/api/abouts",aboutController.addAbout)
+app.get("/api/abouts",aboutController.getAbout)
+
 app.get('/api/slider',serviceController.getSlider)
 
 
 app.get('/admin/admins',adminController.getAdmins)
 app.post('/admin/add',adminController.addAdmin)
 app.post('/admin/login',adminController.loginAdmin)
+
 
 app.get("/hello",(req,res)=>{
     return res.send("hello")
