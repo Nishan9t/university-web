@@ -1,10 +1,11 @@
-const courseModel = require("../models/courseModel");
+const contactModel = require("../models/contactModel");
 const jwt =require('jsonwebtoken')
 
 
 module.exports.addContact=async(req,res)=>{
 
-    if(!req.headers.authorization)
+    try{
+        if(!req.headers.authorization)
     {
         return res.send({code : 403 , message:"No Token"})
     }
@@ -30,7 +31,7 @@ module.exports.addContact=async(req,res)=>{
         return res.send({code:400 , message:"Bad request"})
     }
 
-    const newContact = new courseModel({title:title , description:description })
+    const newContact = new contactModel({title:title , description:description })
 
     const success = await newContact.save();
 
@@ -38,15 +39,19 @@ module.exports.addContact=async(req,res)=>{
     {
         return res.send({code : 200 , message:"contact add success"})
     }
-    else{
+    
+    }
+    catch(err)
+    {
         return res.send({code : 500 , message:"api error"})
     }
 
+    
 }
 
 module.exports.getContact=async(req,res)=>{
 
-    const _data= await courseModel.find({})
+    const _data= await contactModel.find({})
 
     if(_data)
     {

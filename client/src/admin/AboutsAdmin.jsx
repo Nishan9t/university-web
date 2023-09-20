@@ -20,8 +20,7 @@ export default function AboutsAdmin() {
 
   
    const handleSubmit=async()=>{
-      await axios.post('http://localhost:8000/api/courses',
-      
+      await axios.post('http://localhost:8000/api/abouts',
       {
         title:title,
         description:desc
@@ -37,7 +36,7 @@ export default function AboutsAdmin() {
         setDesc("");
        
         alert(res.data.message);
-        navigate("/courses")
+        navigate("/abouts")
 
       }).catch(err=>{
         console.log(err)

@@ -20,8 +20,7 @@ export default function ContactsAdmin() {
 
   
    const handleSubmit=async()=>{
-      await axios.post('http://localhost:8000/api/courses',
-      
+      await axios.post('http://localhost:8000/api/contacts', 
       {
         title:title,
         description:desc
@@ -37,7 +36,7 @@ export default function ContactsAdmin() {
         setDesc("");
        
         alert(res.data.message);
-        navigate("/courses")
+        navigate("/contact")
 
       }).catch(err=>{
         console.log(err)
