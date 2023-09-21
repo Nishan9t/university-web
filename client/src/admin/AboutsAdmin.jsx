@@ -36,7 +36,7 @@ export default function AboutsAdmin() {
         setDesc("");
        
         alert(res.data.message);
-        navigate("/abouts")
+        navigate("/about")
 
       }).catch(err=>{
         console.log(err)
