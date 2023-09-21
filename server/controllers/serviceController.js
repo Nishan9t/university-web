@@ -1,5 +1,6 @@
 const servicesModel = require("../models/servicesModel")
 const jwt = require('jsonwebtoken')
+const slideModel = require("../models/slideModel")
 
 module.exports.addServices=async(req,res)=>{
 
@@ -67,4 +68,45 @@ module.exports.getServices=async(req,res)=>{
     const url3='https://picsum.photos/id/3/1550/550'
     const arr =[url1,url2,url3]
     return res.send({code:200 , message:"success",data: arr})
+}
+
+module.exports.addSlider=async(req,res)=>{
+   
+//     if(!req.headers.authorization)
+//     {
+//         return res.send({code : 403 , message:"No Token"})
+//     }
+    
+
+//     const userDetail = await jwt.verify(req.headers.authorization,'PRIVATEKEY')
+
+//     if(userDetail._doc.type !=='SUBADMIN' && userDetail._doc.type !=='ADMIN')
+//     {
+//         return res.send({code : 403 , message:"Unauthorized"})
+//     }
+//    //if token is created more 1hr ago then return token expire 
+//     if(userDetail.iat - new Date().getTime() > 3.6e+6){
+//         return res.send({code: 403 , message:"token expire"})
+//     }
+
+    const url1=req.body.link1
+    
+
+
+    if(!url1)
+    {
+        return res.send({code:400 , message:"Bad request"})
+    }
+
+    const newSlide = new slideModel({link:url1})
+
+    const success = await newSlide.save();
+
+    if(success)
+    {
+        return res.send({code : 200 , message:"add success"})
+    }
+    else{
+        return res.send({code : 500 , message:"service error"})
+    }
 }

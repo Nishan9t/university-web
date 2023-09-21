@@ -6,16 +6,18 @@ import {MdCircle} from 'react-icons/md'
 export default function Carousel() {
 
     const [images,setImages] = useState([])
+    
     const [ind,setInd]=useState(0);
+    const len = images.length-1;
 
     function indexSet(work){
-      if(ind===2 && work==="+")
+      if(ind===len && work==="+")
       {
         setInd(0);
       }
       else if(ind===0 && work==="-")
       {
-        setInd(2);
+        setInd(len);
       }
       else{
         if(work==="+")
@@ -31,7 +33,7 @@ export default function Carousel() {
       }
 
       setTimeout(()=>{
-        if(ind===2)
+        if(ind===len)
         {
           setInd(0);
         }
@@ -39,6 +41,7 @@ export default function Carousel() {
           setInd(ind+1);
         }
       }, 3000);
+    
 
     useEffect(()=>{
         axios.get('http://localhost:8000/api/slider')
@@ -53,6 +56,8 @@ export default function Carousel() {
         
 
     },[ind])
+
+  
 
 
   return (

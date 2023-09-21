@@ -47,6 +47,8 @@ app.get("/api/contacts",contactController.getContact)
 app.post("/api/abouts",aboutController.addAbout)
 app.get("/api/abouts",aboutController.getAbout)
 
+
+app.post("/api/slider",serviceController.addSlider)
 app.get('/api/slider',serviceController.getSlider)
 
 
