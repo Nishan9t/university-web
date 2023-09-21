@@ -21,7 +21,7 @@ import CoursesAdmin from './admin/CoursesAdmin';
 
 import ContactsAdmin from './admin/ContactsAdmin';
 import AboutsAdmin from './admin/AboutsAdmin';
-
+import SlidersAdmin from './admin/SlidersAdmin'
 function App() {
   return (
     <>
@@ -40,6 +40,7 @@ function App() {
         <Route path="/admin/courses" element={<CoursesAdmin />} />
         <Route path="/admin/contacts" element={<ContactsAdmin />} />
         <Route path="/admin/abouts" element={<AboutsAdmin />} />
+        <Route path="/admin/sliders" element={<SlidersAdmin />} />
         <Route path="/admin/list" element={<ListAdmins />} />
         <Route path="/admin/add" element={<AddAdmin />} />
         <Route path="/admin/login" element={<LoginAdmin />} />
