@@ -69,7 +69,7 @@ export default function Carousel() {
                   <div className='flex align-center justify-center relative '>
                           <button className=' p-2 absolute top-1/2 left-44 border border-white hover:border-blue-500 bg-slate-100 rounded-2xl white-200' onClick={()=>indexSet("-")}><FaLessThan/></button>
                       
-                          <img className='' src={images[ind]}alt="carousel"/>
+                          <img  className='h-96 w-full' src={images[ind]}alt="carousel"/>
                         
                           <button className='p-2 absolute top-1/2 right-44 border border-white hover:border-blue-500 bg-slate-100 rounded-2xl white-200' onClick={()=>indexSet("+")}><FaGreaterThan/></button>
                           

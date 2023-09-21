@@ -38,7 +38,7 @@ export default function AboutsAdmin() {
        
        
         alert(res.data.message);
-        navigate("/home")
+        navigate("/")
 
       }).catch(err=>{
         console.log(err)
