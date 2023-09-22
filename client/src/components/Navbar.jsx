@@ -12,6 +12,7 @@ export default function Navbar() {
 useEffect(()=>{
   if(drop==='course')
   {
+    
     navigate('/admin/courses')
   }
   else if(drop==='service')
@@ -30,6 +31,7 @@ useEffect(()=>{
   {
     navigate('/admin/sliders')
   }
+ 
 
 },[drop])
 
