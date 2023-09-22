@@ -46,6 +46,8 @@ app.get("/api/contacts",contactController.getContact)
 
 app.post("/api/abouts",aboutController.addAbout)
 app.get("/api/abouts",aboutController.getAbout)
+app.delete("/api/abouts/delete/:id",aboutController.deleteAbout)
+
 
 
 app.post("/api/slider",serviceController.addSlider)

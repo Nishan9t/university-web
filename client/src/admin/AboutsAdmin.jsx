@@ -42,10 +42,11 @@ export default function AboutsAdmin() {
         {
           localStorage.setItem('token',null)
         }
-      
+        setTitle("");
+        setDesc("");
        
         alert(res.data.message);
-      
+        navigate("/about")
 
       }).catch(err=>{
         console.log(err)
@@ -65,8 +66,7 @@ export default function AboutsAdmin() {
         {
           localStorage.setItem('token',null)
         }
-        
-        alert(res.data.message);
+        alert(res.data.message)
         navigate("/about")
 
       }).catch(err=>{
@@ -107,14 +107,14 @@ export default function AboutsAdmin() {
                 </div>
 
                 <div className='my-auto px-4 hover:text-red-500 text-4xl hover:scale-125 h-full'>
-                    <button className='h-full' onClick={handleDelete(item._id)}><AiFillDelete /></button>
+                    <button className='h-full' onClick={()=>handleDelete(item._id)}><AiFillDelete /></button>
                 </div>
 
               </div>
               )
              })
              :
-             <h1>no about data found</h1>
+             <h1 className='text-center bold mx-auto mt-4'>no about data found</h1>
 
         }
         </div>

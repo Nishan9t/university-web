@@ -33,7 +33,7 @@ export default function About() {
       )
     })
     :
-    <h1>no about data found</h1>
+    <h1 className='text-center bold mx-auto mt-4'>no about data found</h1>
 
 
   }
