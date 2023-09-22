@@ -1,11 +1,17 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
+import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom'
 
 
-export default function AboutsAdmin() {
+export default function SlidersAdmin() {
 
   const navigate=useNavigate()
+
+  
+
+
+
 
    const [link1,setLink1]=useState("")
   
