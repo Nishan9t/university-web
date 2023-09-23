@@ -63,3 +63,48 @@ module.exports.getContact=async(req,res)=>{
     }
 
 }
+
+
+module.exports.deleteContact=async(req,res)=>{
+
+    try{
+        if(!req.headers.authorization)
+        {
+            return res.send({code : 403 , message:"No Token"})
+        }
+        
+    
+        const userDetail = await jwt.verify(req.headers.authorization,'PRIVATEKEY')
+    
+        if(userDetail._doc.type !=='SUBADMIN' && userDetail._doc.type !=='ADMIN')
+        {
+            return res.send({code : 403 , message:"Unauthorized"})
+        }
+    
+         //if token is created more 1hr ago then return token expire 
+         if(userDetail.iat - new Date().getTime() > 3.6e+6){
+            return res.send({code: 403 , message:"token expire"})
+        }
+    
+       const id=req.params.id;
+       console.log(id);
+    
+        if(!id)
+        {
+            return res.send({code:400 , message:"Bad request"})
+        }
+    
+        const newContact =await contactModel.deleteOne({_id:id});
+    
+    
+        return res.send({code : 200 , message:"contact delete success"})
+        
+       
+    }
+    catch(err)
+    {
+        return res.send({code : 500 , message:"api error"})
+    }
+
+    
+}

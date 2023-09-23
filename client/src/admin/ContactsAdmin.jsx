@@ -80,7 +80,7 @@ export default function ContactsAdmin() {
 
 
   return (
-    <div mb-36>
+    <div className='mb-36'>
         <div className='flex flex-col w-1/2 justify-center align-center mx-auto shadow-xl mt-4  p-4'>
           <input type='text' className='m-4  border border-2 hover:border-green-200 p-2 rounded-lg' placeholder='Contact Title' value={title} onChange={(e)=>setTitle(e.target.value)}></input>
           

@@ -43,6 +43,7 @@ app.get("/api/courses",courseController.getCourses)
 
 app.post("/api/contacts",contactController.addContact)
 app.get("/api/contacts",contactController.getContact)
+app.delete("/api/contacts/delete/:id",contactController.deleteContact)
 
 app.post("/api/abouts",aboutController.addAbout)
 app.get("/api/abouts",aboutController.getAbout)
