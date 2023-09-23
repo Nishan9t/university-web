@@ -10,6 +10,7 @@ export default function Navbar() {
   const [drop , setDrop ]=useState('')
 
 useEffect(()=>{
+  
   if(drop==='course')
   {
     
