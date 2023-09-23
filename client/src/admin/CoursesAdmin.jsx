@@ -67,7 +67,7 @@ export default function CoursesAdmin() {
           localStorage.setItem('token',null)
         }
         alert(res.data.message)
-        navigate("/about")
+        navigate("/courses")
 
       }).catch(err=>{
         console.log(err)
