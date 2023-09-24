@@ -37,6 +37,7 @@ const connectDB =async()=>{
 
 app.post("/api/services",upload.single('image'),serviceController.addServices)
 app.get("/api/services",serviceController.getServices)
+app.delete("/api/services/delete/:id",serviceController.deleteService)
 
 app.post("/api/courses",courseController.addCourses)
 app.get("/api/courses",courseController.getCourses)

@@ -60,6 +60,12 @@ module.exports.getServices=async(req,res)=>{
     }
 }
 
+
+module.exports.deleteService=async(req,res)=>{
+    
+
+}
+
  //slider images
 
  module.exports.getSlider=async(req,res)=>{
@@ -117,3 +123,5 @@ module.exports.addSlider=async(req,res)=>{
         return res.send({code : 500 , message:"service error"})
     }
 }
+
+

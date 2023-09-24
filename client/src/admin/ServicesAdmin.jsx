@@ -57,6 +57,26 @@ export default function ServicesAdmin() {
    }
 
 
+   const handleDelete=async(id)=>{
+
+    await axios.delete(`http://localhost:8000/api/services/delete/${id}`,
+      {
+        headers:{'authorization':localStorage.getItem('token')}
+      }).then((res)=>{
+        if(res.data.code ===403 && res.data.message==="token expire")
+        {
+          localStorage.setItem('token',null)
+        }
+        alert(res.data.message)
+        navigate("/about")
+
+      }).catch(err=>{
+        console.log(err)
+      })
+
+   }
+
+
   return (
     <div className='mb-36 '>
           <div className='flex flex-col w-1/2 justify-center align-center mx-auto shadow-xl mt-4 p-4'>
@@ -82,7 +102,7 @@ export default function ServicesAdmin() {
                   <div className='mb-4'>{serviceItem.description}</div>
 
                   <div className='px-4 hover:text-red-500 text-4xl hover:scale-125 text-center'>
-                    <button className='' ><AiFillDelete /></button>
+                    <button className='' onClick={()=>handleDelete(serviceItem._id)} ><AiFillDelete /></button>
                   </div>
                 </div>
               )
