@@ -68,7 +68,7 @@ export default function ServicesAdmin() {
           localStorage.setItem('token',null)
         }
         alert(res.data.message)
-        navigate("/about")
+        navigate("/services")
 
       }).catch(err=>{
         console.log(err)
