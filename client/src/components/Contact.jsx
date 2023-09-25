@@ -26,7 +26,7 @@ export default function Contact() {
           contactState.contactData.length>0 ?
           contactState.contactData.map((item)=>{
             return(
-              <div className="lg:px-16 lg:py-16 lg:m-16 shadow-lg sm:p-4 md:p-4 sm:m-4 md:m-4">
+              <div className="lg:px-16 sm:px-8  lg:m-16 sm:m-2 shadow-lg">
             <h1 className="font-bold text-lg">{item.title}</h1>
             <p>
             {item.description}

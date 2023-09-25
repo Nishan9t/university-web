@@ -81,7 +81,7 @@ export default function ContactsAdmin() {
 
   return (
     <div className='mb-36'>
-        <div className='flex flex-col w-1/2 justify-center align-center mx-auto shadow-xl mt-4  p-4'>
+        <div className='flex flex-col lg:w-1/2 justify-center align-center mx-auto shadow-xl m-4  p-4'>
           <input type='text' className='m-4  border border-2 hover:border-green-200 p-2 rounded-lg' placeholder='Contact Title' value={title} onChange={(e)=>setTitle(e.target.value)}></input>
           
           <textarea className='m-4 h-36  border border-2 hover:border-green-200 p-2 rounded-lg' placeholder='Contact Description' value={desc} onChange={(e)=>setDesc(e.target.value)}></textarea>
@@ -90,7 +90,7 @@ export default function ContactsAdmin() {
           <button className='border w-32 border-2 border-green-200 rounded-lg p-2 hover:bg-green-200 self-center' onClick={(e)=>handleSubmit()}>ADD CONTACT</button>
         </div>
 
-        <div>
+        <div className='m-4 p-2'> 
         {
             
             contactState &&
@@ -110,6 +110,7 @@ export default function ContactsAdmin() {
                   <div className='my-auto px-4 hover:text-red-500 text-4xl hover:scale-125 h-full'>
                       <button className='h-full' onClick={()=>handleDelete(item._id)}><AiFillDelete /></button>
                   </div>
+                  
   
                 </div>
                 )
