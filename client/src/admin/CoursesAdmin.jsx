@@ -78,7 +78,7 @@ export default function CoursesAdmin() {
 
   return (
     <div className='mb-36 '>
-        <div className='flex flex-col w-1/2 justify-center align-center mx-auto shadow-xl mt-4 p-4'>
+        <div className='flex flex-col lg:w-1/2 justify-center align-center mx-auto shadow-xl m-4 p-4'>
           <input type='text' className='m-4  border border-2 hover:border-green-200 p-2 rounded-lg' placeholder='Course Title' value={title} onChange={(e)=>setTitle(e.target.value)}></input>
           
           <textarea className='m-4 h-36  border border-2 hover:border-green-200 p-2 rounded-lg' placeholder='Course Description' value={desc} onChange={(e)=>setDesc(e.target.value)}></textarea>

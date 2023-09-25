@@ -21,7 +21,7 @@ export default function Courses() {
       {
         courseState.isLoading && <h1 className='text-center'>LOADING...</h1>
       }
-    <div className='lg:flex-wrap md:flex lg:mx-auto justify-center'>
+    <div className='lg:flex-wrap lg:mx-auto justify-center'>
 
     {
       courseState &&
@@ -29,7 +29,7 @@ export default function Courses() {
              courseState.coursesData.length > 0 ?
                   courseState.coursesData.map((item)=>{
                         return(
-                           <div className='flex border border-2 border-solid p-2 ml-8 my-4 h-32 lg:w-3/4 sm:w-full md:w-full shadow-lg items-center rounded-md'>
+                           <div className='lg:flex border border-2 border-solid p-2 lg:ml-8 sm:mx-4 my-4 h-32 lg:w-3/4 sm:w-full md:w-full shadow-lg items-center rounded-md'>
                               <div className='font-bold text-lg capitalize '>{item.title}</div>
                               <div className='m-4'>{item.description}</div>
                            </div>
