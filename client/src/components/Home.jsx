@@ -11,9 +11,9 @@ export default function Home() {
   return (
    
       <div className='mb-36'>
-          <div className='animate text-blue-400'>
+          {/* <div className='animate text-blue-400'>
             <Link to='/posts'>Latest Post</Link>
-          </div>
+          </div> */}
 
           <div className=''>
              <Carousel/>

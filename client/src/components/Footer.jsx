@@ -13,7 +13,7 @@ export default function Footer() {
         </div>
         
         <div className='my-4'>
-            <Link className='mx-2 hover:border-b-2 ' to="/home">University ABC</Link>
+            <Link className='mx-2 hover:border-b-2 ' to="/">University ABC</Link>
             <Link className='mx-2 hover:border-b-2 ' to="/about">About Us</Link>
             <Link className='mx-2 hover:border-b-2 ' to="/contact">Contact Us</Link>
         </div>

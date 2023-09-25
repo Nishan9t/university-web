@@ -51,7 +51,7 @@ useEffect(()=>{
         </div>
 
         {/* Links */}
-        <div className='flex flex-row'>
+        <div className='lg:flex flex-row'>
 
             <div className='px-2 lg:py-4 hover:pb-0 font-bold cursor-pointer hover:text-red-500 hover:border-b-4 hover:border-red-500'> <Link to="/">Home</Link>        </div>
             <div className='px-2 lg:py-4 hover:pb-0 font-bold cursor-pointer hover:text-red-500 hover:border-b-4 hover:border-red-500'> <Link to="/courses">Courses</Link>  </div>
@@ -60,7 +60,7 @@ useEffect(()=>{
             <div className='px-2 lg:py-4 hover:pb-0 font-bold cursor-pointer hover:text-red-500 hover:border-b-4 hover:border-red-500'> <Link to="/contact">Contact</Link>    </div>
             {
               localStorage.getItem('token') &&
-              <div className='lg:py-4 hover:pb-0 font-bold cursor-pointer border-none hover:text-red-500'> 
+              <div className='lg:py-4 md:py-2 sm:py-2 hover:pb-0 lg:font-bold cursor-pointer border-none hover:text-red-500'> 
               <select value={drop} onChange={(e)=>setDrop(e.target.value)} className='hover:text-red-500  border-none bg-green-400 text-center p-0 active:border-none focus:border-none' >
                 <option>Add Contents</option>
                 <option className='border-none active:border-0 hover:border-0 focus:border-none' value={'service'} >Add Services</option>

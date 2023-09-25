@@ -67,15 +67,15 @@ export default function Carousel() {
 
         
                   <div className='flex align-center justify-center relative '>
-                          <button className=' p-2 absolute top-1/2 left-44 border border-white hover:border-blue-500 bg-slate-100 rounded-2xl white-200' onClick={()=>indexSet("-")}><FaLessThan/></button>
+                          <button className='invisible md:visible lg:visible p-2  absolute top-1/2 md:left-44 border border-white hover:border-blue-500 bg-slate-100 rounded-2xl white-200' onClick={()=>indexSet("-")}><FaLessThan/></button>
                       
                           <img  className='h-96 w-full' src={images[ind]}alt="carousel"/>
                         
-                          <button className='p-2 absolute top-1/2 right-44 border border-white hover:border-blue-500 bg-slate-100 rounded-2xl white-200' onClick={()=>indexSet("+")}><FaGreaterThan/></button>
+                          <button className='invisible md:visible lg:visible p-2  absolute top-1/2 md:right-44  border border-white hover:border-blue-500 bg-slate-100 rounded-2xl white-200' onClick={()=>indexSet("+")}><FaGreaterThan/></button>
                           
                   </div>
 
-                  <div className='flex justify-center absolute bottom-4 left-1/2'>
+                  <div className='invisible md:visible flex justify-center absolute bottom-4 left-1/2'>
 
                       {
                         images.map((image,index)=>{
