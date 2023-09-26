@@ -32,6 +32,10 @@ useEffect(()=>{
   {
     navigate('/admin/sliders')
   }
+  else if(drop==='student')
+  {
+    navigate('/admin/student')
+  }
  
 
 },[drop])
@@ -61,13 +65,14 @@ useEffect(()=>{
             {
               localStorage.getItem('token') &&
               <div className='lg:py-4 hover:pb-0 lg:font-bold cursor-pointer border-none hover:text-red-500'> 
-              <select value={drop} onChange={(e)=>setDrop(e.target.value)} className='hover:text-red-500  border-none bg-green-400 text-center font-bold active:border-none focus:border-none' >
+              <select value={drop} onChange={(e)=>setDrop(e.target.value)} className='hover:text-red-500 cursor-pointer border-none bg-green-400 text-center font-bold active:border-none focus:border-none' >
                 <option>Add Contents</option>
                 <option className='border-none active:border-0 hover:border-0 focus:border-none' value={'service'} >Add Services</option>
                 <option className='border-none active:border-0 hover:border-0 focus:border-none' value={'course'}>Add Courses</option>
                 <option className='border-none active:border-0 hover:border-0 focus:border-none' value={'contact'}>Add Contacts</option>
                 <option className='border-none active:border-0 hover:border-0 focus:border-none' value={'about'}>Add Abouts</option>
                 <option className='border-none active:border-0 hover:border-0 focus:border-none' value={'slide'}>Add Sliders</option>
+                <option className='border-none active:border-0 hover:border-0 focus:border-none' value={'student'}>Add Student</option>
               </select>
               
               </div>

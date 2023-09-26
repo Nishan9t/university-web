@@ -6,6 +6,10 @@ import { Link } from 'react-router-dom';
 
 export default function Courses() {
 
+      const type=localStorage.getItem('type')
+      const token=localStorage.getItem('token')
+
+
       const dispatch =useDispatch();
 
       const courseState = useSelector(state=>state.courseReducer)
@@ -15,6 +19,11 @@ export default function Courses() {
             dispatch(getCourses())
 
       },[])
+
+      useEffect(()=>{
+   
+
+      },[type,token])
  
   return (
 
@@ -36,8 +45,11 @@ export default function Courses() {
                               <div className='m-4'>{item.description}</div>
                               
                            </div>
-                           <div className='p-2 absolute right-0 text-blue-400 underlined'><Link to="/course/students">Enrolled Student</Link></div>
+                           
+                        <div className='p-2 absolute right-0 text-blue-400 underline'>
+                        <Link to="/course/students">Enrolled Student</Link></div>
                         </div>
+                       
                         )
     })
     :

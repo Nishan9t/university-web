@@ -23,6 +23,7 @@ import ContactsAdmin from './admin/ContactsAdmin';
 import AboutsAdmin from './admin/AboutsAdmin';
 import SlidersAdmin from './admin/SlidersAdmin'
 import Students from './components/Students';
+import StudentAdmin from './admin/StudentAdmin';
 function App() {
   return (
     <>
@@ -47,6 +48,7 @@ function App() {
         <Route path="/admin/add" element={<AddAdmin />} />
         <Route path="/admin/login" element={<LoginAdmin />} />
         <Route path="/admin/dashboard" element={<AdminDash />} />
+        <Route path="/admin/student" element={<StudentAdmin />} />
         
         
       </Routes>
