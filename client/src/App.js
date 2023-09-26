@@ -22,6 +22,7 @@ import CoursesAdmin from './admin/CoursesAdmin';
 import ContactsAdmin from './admin/ContactsAdmin';
 import AboutsAdmin from './admin/AboutsAdmin';
 import SlidersAdmin from './admin/SlidersAdmin'
+import Students from './components/Students';
 function App() {
   return (
     <>
@@ -35,6 +36,7 @@ function App() {
         <Route path="/services" element={<Services />} />
         <Route path="/posts" element={<Services />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/course/students" element={<Students />} />
 
         <Route path="/admin/services" element={<ServicesAdmin />} />
         <Route path="/admin/courses" element={<CoursesAdmin />} />
