@@ -1,4 +1,5 @@
 const courseModel = require("../models/courseModel");
+const studentModel=require("../models/studentModel");
 const jwt =require('jsonwebtoken')
 
 
@@ -100,5 +101,48 @@ module.exports.deleteCourse=async(req,res)=>{
     }
 
    
+
+}
+
+module.exports.addStudent=async(req,res)=>{
+
+    if(!req.headers.authorization)
+    {
+        return res.send({code : 403 , message:"No Token"})
+    }
+    
+
+    const userDetail = await jwt.verify(req.headers.authorization,'PRIVATEKEY')
+
+    if(userDetail._doc.type !=='SUBADMIN' && userDetail._doc.type !=='ADMIN')
+    {
+        return res.send({code : 403 , message:"Unauthorized"})
+    }
+
+     //if token is created more 1hr ago then return token expire 
+     if(userDetail.iat - new Date().getTime() > 3.6e+6){
+        return res.send({code: 403 , message:"token expire"})
+    }
+
+    const name = req.body.name;
+    const roll = req.body.roll;
+    const courseId = req.body.courseId;
+
+    if(!name || !roll || !courseId)
+    {
+        return res.send({code:400 , message:"Bad request"})
+    }
+
+    const newStudent = new studentModel({name:name , roll:roll , courseId:courseId })
+
+    const success = await newStudent.save();
+
+    if(success)
+    {
+        return res.send({code : 200 , message:"student add success"})
+    }
+    else{
+        return res.send({code : 500 , message:"api error"})
+    }
 
 }
