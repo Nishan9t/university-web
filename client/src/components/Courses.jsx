@@ -47,7 +47,7 @@ export default function Courses() {
                            </div>
                            
                         <div className='p-2 absolute right-0 text-blue-400 underline'>
-                        <Link to="/course/students">Enrolled Student</Link></div>
+                        <Link to={`/course/${item._id}/students`}>Enrolled Student</Link></div>
                         </div>
                        
                         )

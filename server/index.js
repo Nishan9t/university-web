@@ -43,10 +43,12 @@ app.post("/api/courses",courseController.addCourses)
 app.get("/api/courses",courseController.getCourses)
 app.delete("/api/courses/delete/:id",courseController.deleteCourse)
 app.post("/api/course/student/:id",courseController.addStudent)
+app.get("/api/course/students/:id",courseController.getStudent)
 
 app.post("/api/contacts",contactController.addContact)
 app.get("/api/contacts",contactController.getContact)
 app.delete("/api/contacts/delete/:id",contactController.deleteContact)
+
 
 app.post("/api/abouts",aboutController.addAbout)
 app.get("/api/abouts",aboutController.getAbout)

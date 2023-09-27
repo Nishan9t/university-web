@@ -146,3 +146,22 @@ module.exports.addStudent=async(req,res)=>{
     }
 
 }
+
+module.exports.getStudent=async(req,res)=>{
+
+    const courseId=req.params.id;
+    
+
+    const _data= await studentModel.find({courseId:courseId})
+  
+
+    if(_data)
+    {
+        return res.send({code : 200 , message: 'success' , data : _data})
+
+    }
+    else{
+        return res.send({code:500 , message:"api error"});
+    }
+
+}
