@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { getCourses } from '../reducers/courseReducer';
 import {BsPersonFillAdd} from 'react-icons/bs'
-import addStudent from '../components/addStudent'
+import addStudent from '../components/AddStudent'
 
 export default function StudentAdmin() {
 
@@ -22,6 +22,9 @@ export default function StudentAdmin() {
     dispatch(getCourses())
  },[])
 
+ const handleClick=(id)=>{
+  navigate(`/${id}/addStudent`)
+ }
 
 
   return (
@@ -44,7 +47,7 @@ export default function StudentAdmin() {
                             </div>
 
                             <div className='my-auto px-4 hover:text-red-500 text-4xl hover:scale-125 h-full'>
-                                <button title='add student'><BsPersonFillAdd/></button>
+                                <button title='add student' onClick={()=>handleClick(item._id)}><BsPersonFillAdd/></button>
                 
                             </div>
                            

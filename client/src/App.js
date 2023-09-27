@@ -7,6 +7,7 @@ import ListAdmins from './admin/ListAdmins';
 import LoginAdmin from './admin/LoginAdmin';
 import ServicesAdmin from './admin/ServicesAdmin';
 import About from './components/About';
+import AddStudent from './components/AddStudent';
 import Contact from './components/Contact';
 import Courses from './components/Courses';
 import Footer from './components/Footer';
@@ -38,6 +39,7 @@ function App() {
         <Route path="/posts" element={<Services />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/course/students" element={<Students />} />
+        <Route path="/:id/addStudent" element={<AddStudent />} />
 
         <Route path="/admin/services" element={<ServicesAdmin />} />
         <Route path="/admin/courses" element={<CoursesAdmin />} />
