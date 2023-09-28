@@ -10,6 +10,8 @@ export default function AddStudent() {
     const [name,setName]=useState('');
     const [roll,setRoll]=useState(0);
 
+    const [file,setFile]=useState('')
+
 
   const navigate=useNavigate()
   useEffect(()=>{
@@ -47,9 +49,32 @@ export default function AddStudent() {
    
  }
 
- const handleForm=(e)=>{
-  e.preventDefault();
-  console.log(e)
+  const formData = new FormData();
+  formData.append('file',file);
+  formData.append('courseId',id)
+
+ const handleForm=async()=>{
+ 
+
+
+  await axios.post('http://localhost:8000/api/course/students/file',
+      formData,
+      {
+        headers:{'authorization':localStorage.getItem('token')}
+      }).then((res)=>{
+        // if(res.data.code ===403 && res.data.message==="token expire")
+        // {
+        //   localStorage.setItem('token',null)
+        // }
+        console.log(res);
+        
+        // alert(res.data.message);
+        // navigate("/services")
+
+      }).catch(err=>{
+        console.log(err)
+      })
+
 
  }
 
@@ -65,11 +90,11 @@ export default function AddStudent() {
         </div>
         <h1 className='font-bold text-3xl text-center w-1/2 mx-auto m-4'> OR </h1>
         <div className='items-center border border-2 shadow-lg w-1/2 mx-auto m-4'>
-          <form className='text-center' onSubmit={(e)=>handleForm(e)}>
-            <input type='file' name="" accept=".xlsx, .xls" className='border border-2 m-2 p-2 rounded-lg' onChange={(e)=>e.target.name=e.target.files[0].name} placeholder=''/>
-            <button type="submit" className="border w-16 mb-2 border-2 border-green-200 rounded-lg p-2 hover:bg-green-200 self-center " >ADD</button>
+          <div className='text-center' >
+            <input type='file'  accept=".xlsx, .xls" className='border border-2 m-2 p-2 rounded-lg' onChange={(e)=>setFile(e.target.files[0])} placeholder=''/>
+            <button type="submit" onClick={(e)=>handleForm()} className="border w-16 mb-2 border-2 border-green-200 rounded-lg p-2 hover:bg-green-200 self-center " >ADD</button>
             <p className='text-gray-500'>Select excel file with Student Name and Roll</p>
-          </form>
+          </div>
         </div>
     </div>
   )
