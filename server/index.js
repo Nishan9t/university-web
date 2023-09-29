@@ -65,6 +65,7 @@ app.get('/api/slider',serviceController.getSlider)
 
 app.get('/admin/admins',adminController.getAdmins)
 app.post('/admin/add',adminController.addAdmin)
+app.delete('/admin/delete/:id',adminController.deleteSubadmin)
 app.post('/admin/login',adminController.loginAdmin)
 
 
