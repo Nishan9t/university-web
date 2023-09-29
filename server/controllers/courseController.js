@@ -1,6 +1,7 @@
 const courseModel = require("../models/courseModel");
 const studentModel=require("../models/studentModel");
 const jwt =require('jsonwebtoken')
+const xlsx=require('xlsx')
 
 
 module.exports.addCourses=async(req,res)=>{
@@ -169,44 +170,60 @@ module.exports.getStudent=async(req,res)=>{
 
 module.exports.addStudentFile=async(req,res)=>{
 
-    console.log("upload")
+  
 
-    // if(!req.headers.authorization)
-    // {
-    //     return res.send({code : 403 , message:"No Token"})
-    // }
+    if(!req.headers.authorization)
+    {
+        return res.send({code : 403 , message:"No Token"})
+    }
     
 
-    // const userDetail = await jwt.verify(req.headers.authorization,'PRIVATEKEY')
+    const userDetail = await jwt.verify(req.headers.authorization,'PRIVATEKEY')
 
-    // if(userDetail._doc.type !=='SUBADMIN' && userDetail._doc.type !=='ADMIN')
-    // {
-    //     return res.send({code : 403 , message:"Unauthorized"})
-    // }
+    if(userDetail._doc.type !=='SUBADMIN' && userDetail._doc.type !=='ADMIN')
+    {
+        return res.send({code : 403 , message:"Unauthorized"})
+    }
 
-    //  //if token is created more 1hr ago then return token expire 
-    //  if(userDetail.iat - new Date().getTime() > 3.6e+6){
-    //     return res.send({code: 403 , message:"token expire"})
-    // }
+     //if token is created more 1hr ago then return token expire 
+     if(userDetail.iat - new Date().getTime() > 3.6e+6){
+        return res.send({code: 403 , message:"token expire"})
+    }
 
     const file = req.file
-    console.log(file)
+    const courseId =req.body.courseId
+    // console.log(file)
 
-    // if(!name || !roll || !courseId)
-    // {
-    //     return res.send({code:400 , message:"Bad request"})
-    // }
+    if(!file||!courseId)
+    {
+        return res.send({code:400 , message:"Bad request"})
+    }
 
-    // const newStudent = new studentModel({name:name , roll:roll , courseId:courseId })
+    // Use xlsx module to read the Excel file
+    const workbook = xlsx.readFile(file.path);
+    const sheetName = workbook.SheetNames[0];
+    const sheet = workbook.Sheets[sheetName];
+    const data = xlsx.utils.sheet_to_json(sheet);
 
-    // const success = await newStudent.save();
+    console.log(data);
+    try{
+        data.map(async(item)=>{
+            // console.log(item.Name + item.Roll)
+            const newStudent = new studentModel({name:item.Name , roll:item.Roll , courseId:courseId })
+            await newStudent.save();
+        })
 
-    // if(success)
-    // {
-    //     return res.send({code : 200 , message:"student add success"})
-    // }
-    // else{
-       return res.send({code : 500 , message:"api error"})
-    // }
+        return res.send({code : 200 , message:"students add success"})
+
+    }
+    catch(err)
+    {
+        return res.send({code : 500 , message:"api error"})
+    }
+
+   
+
+
+    
 
 }

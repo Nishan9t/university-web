@@ -19,7 +19,7 @@ const app=express();
 
 
 app.use('/uploads',express.static('uploads'))
-app.use('/files',express.static('files'))
+// app.use('/files',express.static('files'))
 app.use(cors());
 app.use(bodyParser.urlencoded({ extended:false}))
 app.use(bodyParser.json())
@@ -46,7 +46,7 @@ app.get("/api/courses",courseController.getCourses)
 app.delete("/api/courses/delete/:id",courseController.deleteCourse)
 app.post("/api/course/student/:id",courseController.addStudent)
 app.get("/api/course/students/:id",courseController.getStudent)
-app.post("api/course/students/file",file.single('file'),courseController.addStudentFile)
+app.post("/api/course/file",file.single('file'),courseController.addStudentFile)
 
 app.post("/api/contacts",contactController.addContact)
 app.get("/api/contacts",contactController.getContact)

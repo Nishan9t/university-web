@@ -56,20 +56,19 @@ export default function AddStudent() {
  const handleForm=async()=>{
  
 
-
-  await axios.post('http://localhost:8000/api/course/students/file',
+  await axios.post('http://localhost:8000/api/course/file',
       formData,
       {
         headers:{'authorization':localStorage.getItem('token')}
       }).then((res)=>{
-        // if(res.data.code ===403 && res.data.message==="token expire")
-        // {
-        //   localStorage.setItem('token',null)
-        // }
+        if(res.data.code ===403 && res.data.message==="token expire")
+        {
+          localStorage.setItem('token',null)
+        }
         console.log(res);
         
-        // alert(res.data.message);
-        // navigate("/services")
+        alert(res.data.message);
+        navigate("/admin/student")
 
       }).catch(err=>{
         console.log(err)
@@ -93,7 +92,7 @@ export default function AddStudent() {
           <div className='text-center' >
             <input type='file'  accept=".xlsx, .xls" className='border border-2 m-2 p-2 rounded-lg' onChange={(e)=>setFile(e.target.files[0])} placeholder=''/>
             <button type="submit" onClick={(e)=>handleForm()} className="border w-16 mb-2 border-2 border-green-200 rounded-lg p-2 hover:bg-green-200 self-center " >ADD</button>
-            <p className='text-gray-500'>Select excel file with Student Name and Roll</p>
+            <p className='text-gray-500'>Excel file should contain data on 1st sheet with 1st column as Name and 2nd column as Roll</p>
           </div>
         </div>
     </div>
