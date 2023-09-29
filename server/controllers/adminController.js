@@ -42,7 +42,7 @@ module.exports.loginAdmin=async(req,res)=>{
 
     if(!userExists)
     {
-        return res.send({code:400 , message:"user not found"})
+        return res.send({code:404 , message:"user not found"})
     }
 
     if(userExists.password === password)

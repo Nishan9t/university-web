@@ -21,11 +21,19 @@ export default function LoginAdmin() {
             
             setUserName('')
             setPassword('');
-
+          if(res.data.code ===200)
+          {
             localStorage.setItem('type',res.data.type)
             localStorage.setItem('token',res.data.token)
-          
+            alert("Welcome")
             navigate("/admin/dashboard")
+          }
+          else{
+            alert("wrong password")
+            navigate("/admin/login")
+          }
+           
+            
         }).catch(err=>{
             console.log(err);
         })
