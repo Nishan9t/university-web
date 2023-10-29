@@ -2,7 +2,8 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require("mongoose");
 const cors= require('cors');
-const multer = require('multer')
+const multer = require('multer');
+require('dotenv').config()
 
 const upload = multer({dest:'uploads/'})
 const file = multer({dest:'files/'})
@@ -26,7 +27,7 @@ app.use(bodyParser.json())
 
 const connectDB =async()=>{
     try{
-        await mongoose.connect('mongodb://localhost:27017/university');
+        await mongoose.connect(process.env.DB);
         console.log("DB Connected");
     }
     catch(error)

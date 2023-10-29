@@ -29,7 +29,7 @@ module.exports=adminModel
 // adminModel.create({
 //     userName:'admin-default',
 //     password:'pass123',
-//     type:'admin',
+//     type:'ADMIN',
 //     status:"ACTIVE",
 //     date:new Date(),
 // })
