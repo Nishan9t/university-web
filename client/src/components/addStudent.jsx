@@ -23,7 +23,7 @@ export default function AddStudent() {
  
   const handleSubmit=async()=>{
   
-    await axios.post(`http://localhost:8000/api/course/student/${id}`,
+    await axios.post(`https://university-server-5nor.onrender.com/api/course/student/${id}`,
     {
       name,
       roll,
@@ -56,7 +56,7 @@ export default function AddStudent() {
  const handleForm=async()=>{
  
 
-  await axios.post('http://localhost:8000/api/course/file',
+  await axios.post('https://university-server-5nor.onrender.com/api/course/file',
       formData,
       {
         headers:{'authorization':localStorage.getItem('token')}

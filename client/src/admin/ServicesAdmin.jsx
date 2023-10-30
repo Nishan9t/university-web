@@ -34,7 +34,7 @@ export default function ServicesAdmin() {
    formData.append('image',image)
 
    const handleSubmit=async()=>{
-      await axios.post('http://localhost:8000/api/services',
+      await axios.post('https://university-server-5nor.onrender.com/api/services',
       formData,
       {
         headers:{'authorization':localStorage.getItem('token')}
@@ -59,7 +59,7 @@ export default function ServicesAdmin() {
 
    const handleDelete=async(id)=>{
 
-    await axios.delete(`http://localhost:8000/api/services/delete/${id}`,
+    await axios.delete(`https://university-server-5nor.onrender.com/api/services/delete/${id}`,
       {
         headers:{'authorization':localStorage.getItem('token')}
       }).then((res)=>{
@@ -97,7 +97,7 @@ export default function ServicesAdmin() {
             .map((serviceItem)=>{
               return(
                 <div key={serviceItem._id} className=' border-2 border-solid pt-2 pl-2 pr-2  mx-8 my-4 h-80 lg:w-1/4 sm:w-full md:w-full shadow-lg rounded-md overflow-hidden'>
-                  <img className='w-full h-1/2' src={`http://localhost:8000/${serviceItem?.imageUrl}`} />
+                  <img className='w-full h-1/2' src={`https://university-server-5nor.onrender.com/${serviceItem?.imageUrl}`} />
                   <div className='font-bold text-lg capitalize mb-2 underline'>{serviceItem.title}</div>
                   <div className='mb-4'>{serviceItem.description}</div>
 

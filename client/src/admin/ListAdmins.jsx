@@ -11,7 +11,7 @@ export default function ListAdmins() {
     const [admins,setAdmins]=useState([]);
 
     useEffect(()=>{
-        axios.get("http://localhost:8000/admin/admins")
+        axios.get("https://university-server-5nor.onrender.com/admin/admins")
         .then((res)=>{
             console.log(res.data);
             setAdmins(res.data.data)
@@ -31,7 +31,7 @@ export default function ListAdmins() {
 
     const handleDelete=async(id)=>{
 
-        await axios.delete(`http://localhost:8000/admin/delete/${id}`,
+        await axios.delete(`https://university-server-5nor.onrender.com/admin/delete/${id}`,
           {
             headers:{'authorization':localStorage.getItem('token')}
           }).then((res)=>{

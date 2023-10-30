@@ -44,7 +44,7 @@ export default function Carousel() {
     
 
     useEffect(()=>{
-        axios.get('http://localhost:8000/api/slider')
+        axios.get('https://university-server-5nor.onrender.com/api/slider')
         .then(res=>{
             console.log(res.data);
             setImages(res.data.data)

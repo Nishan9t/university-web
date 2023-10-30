@@ -7,7 +7,7 @@ export const getContact=()=>{
     return async(dispatch)=>{
 
         dispatch({type:"GET_CONTACTS"})
-        const response = await axios.get('http://localhost:8000/api/contacts')
+        const response = await axios.get('https://university-server-5nor.onrender.com/api/contacts')
 
         if(response)
         {

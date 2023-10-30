@@ -31,7 +31,7 @@ export default function ContactsAdmin() {
 },[])
   
    const handleSubmit=async()=>{
-      await axios.post('http://localhost:8000/api/contacts', 
+      await axios.post('https://university-server-5nor.onrender.com/api/contacts', 
       {
         title:title,
         description:desc
@@ -59,7 +59,7 @@ export default function ContactsAdmin() {
 
    const handleDelete=async(id)=>{
 
-    await axios.delete(`http://localhost:8000/api/contacts/delete/${id}`,
+    await axios.delete(`https://university-server-5nor.onrender.com/api/contacts/delete/${id}`,
       {
         headers:{'authorization':localStorage.getItem('token')}
       }).then((res)=>{

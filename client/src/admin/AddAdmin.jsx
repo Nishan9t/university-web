@@ -20,7 +20,7 @@ export default function AddAdmin() {
         else{
             console.log(userName,password,type,status)
 
-        axios.post('http://localhost:8000/admin/add',{
+        axios.post('https://university-server-5nor.onrender.com/admin/add',{
             userName : userName,
             password:password,
             status:status,

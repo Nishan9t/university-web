@@ -30,7 +30,7 @@ export default function AboutsAdmin() {
 
   
    const handleSubmit=async()=>{
-      await axios.post('http://localhost:8000/api/abouts',
+      await axios.post('https://university-server-5nor.onrender.com/api/abouts',
       {
         title:title,
         description:desc
@@ -58,7 +58,7 @@ export default function AboutsAdmin() {
 
    const handleDelete=async(id)=>{
 
-    await axios.delete(`http://localhost:8000/api/abouts/delete/${id}`,
+    await axios.delete(`https://university-server-5nor.onrender.com/api/abouts/delete/${id}`,
       {
         headers:{'authorization':localStorage.getItem('token')}
       }).then((res)=>{

@@ -27,7 +27,7 @@ export default function SlidersAdmin() {
 
   
    const handleSubmit=async()=>{
-      await axios.post('http://localhost:8000/api/slider',
+      await axios.post('https://university-server-5nor.onrender.com/api/slider',
       {
         link1,
        

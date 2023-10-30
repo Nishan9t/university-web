@@ -6,7 +6,7 @@ export const getAbout=()=>{
 
     return async(dispatch)=>{
         dispatch({type:"GET_ABOUTS"})
-        const response = await axios.get('http://localhost:8000/api/abouts')
+        const response = await axios.get('https://university-server-5nor.onrender.com/api/abouts')
 
         if(response)
         {

@@ -7,7 +7,7 @@ export default function Students() {
   const [student,setStudent]=useState([])
 
   const getStudent=async()=>{
-      await axios.get(`http://localhost:8000/api/course/students/${id}`)
+      await axios.get(`https://university-server-5nor.onrender.com/api/course/students/${id}`)
       .then((res)=>{
         setStudent(res.data.data)
         

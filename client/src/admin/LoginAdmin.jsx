@@ -12,7 +12,7 @@ export default function LoginAdmin() {
     const handleClick=()=>{
      
 
-        axios.post('http://localhost:8000/admin/login',{
+        axios.post('https://university-server-5nor.onrender.com/admin/login',{
             userName : userName,
             password:password,
            

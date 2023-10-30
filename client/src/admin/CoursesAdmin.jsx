@@ -31,7 +31,7 @@ export default function CoursesAdmin() {
 
   
    const handleSubmit=async()=>{
-      await axios.post('http://localhost:8000/api/courses',
+      await axios.post('https://university-server-5nor.onrender.com/api/courses',
       
       {
         title:title,
@@ -58,7 +58,7 @@ export default function CoursesAdmin() {
 
    const handleDelete=async(id)=>{
 
-    await axios.delete(`http://localhost:8000/api/courses/delete/${id}`,
+    await axios.delete(`https://university-server-5nor.onrender.com/api/courses/delete/${id}`,
       {
         headers:{'authorization':localStorage.getItem('token')}
       }).then((res)=>{

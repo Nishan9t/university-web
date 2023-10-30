@@ -7,7 +7,7 @@ export const getCourses=()=>{
     return async(dispatch)=>{
 
         dispatch({type:"GET_COURSES"})
-        const response = await axios.get('http://localhost:8000/api/courses')
+        const response = await axios.get('https://university-server-5nor.onrender.com/api/courses')
 
         if(response)
         {
