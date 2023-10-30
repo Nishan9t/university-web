@@ -7,7 +7,7 @@ import ListAdmins from './admin/ListAdmins';
 import LoginAdmin from './admin/LoginAdmin';
 import ServicesAdmin from './admin/ServicesAdmin';
 import About from './components/About';
-import AddStudent from './components/AddStudent';
+import AddStudent from './components/AddStudent'
 import Contact from './components/Contact';
 import Courses from './components/Courses';
 import Footer from './components/Footer';
